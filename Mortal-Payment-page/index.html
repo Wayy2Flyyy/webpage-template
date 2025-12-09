@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Payment Checkout</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/checkout.css" />
+</head>
+<body>
+  <div class="checkout-shell" id="checkout-root">
+    <!-- Left column: Payment + billing details -->
+    <div class="main-layout">
+      <header class="header">
+        <div class="title-block">
+          <div class="badge">
+            <span class="badge-pulse"></span>
+            Mortal Plugins · Checkout v1.0
+          </div>
+          <h1>Complete your secure payment</h1>
+          <p>
+            Use this checkout as the base for your own payment flow. Update the labels,
+            prices, and hooks to match your system or gateway.
+          </p>
+        </div>
+        <div class="secure-indicator">
+          <div class="secure-chip">
+            <span class="icon">🔒</span>
+            <span>End-to-end 256-bit TLS</span>
+          </div>
+          <div class="secure-icons-row">
+            <div class="secure-icon-pill">PCI-DSS Ready</div>
+            <div class="secure-icon-pill">3D Secure</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="card" aria-labelledby="billing-heading">
+        <div class="card-header">
+          <h2 id="billing-heading">Billing details</h2>
+          <span class="sub">Details for the payer</span>
+        </div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="fullName">Full name</label>
+            <div class="input-shell">
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                placeholder="Alex Doe"
+                autocomplete="name"
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="email">
+              Email
+              <span class="helper">Receipt and invoices</span>
+            </label>
+            <div class="input-shell">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </div>
+          </div>
+          <div class="input-group full">
+            <label for="company">
+              Company (optional)
+              <span class="helper">Shown on invoice</span>
+            </label>
+            <div class="input-shell">
+              <input
+                id="company"
+                name="company"
+                type="text"
+                placeholder="Your Company LTD"
+                autocomplete="organization"
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="country">Country / region</label>
+            <div class="input-shell">
+              <select id="country" name="country">
+                <option value="">Select region</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="EU">Europe (EU)</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="vat">
+              VAT / Tax ID
+              <span class="helper">Optional</span>
+            </label>
+            <div class="input-shell">
+              <input
+                id="vat"
+                name="vat"
+                type="text"
+                placeholder="GB123456789"
+              />
+            </div>
+          </div>
+          <div class="input-group full">
+            <label for="address">Billing address</label>
+            <div class="input-shell">
+              <input
+                id="address"
+                name="address"
+                type="text"
+                placeholder="Street & house number"
+                autocomplete="street-address"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <input id="sameShipping" type="checkbox" checked />
+          <label for="sameShipping">
+            <span>
+              <strong>Shipping address is the same as billing</strong><br />
+              You can split them later in your account or order management.
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="card-heading">
+        <div class="card-header">
+          <h2 id="card-heading">Payment method</h2>
+          <span class="sub">Card form · attach your own gateway</span>
+        </div>
+
+        <div class="row-inline">
+          <div class="brand-badge">
+            <div class="brand-symbol"></div>
+            <span>Card · Apple Pay · Google Pay ready</span>
+          </div>
+          <div class="segment-control" aria-label="Payment cadence">
+            <button class="segment-btn active" data-cadence="monthly">
+              Monthly
+            </button>
+            <button class="segment-btn" data-cadence="yearly">
+              Yearly · Save 20%
+            </button>
+          </div>
+        </div>
+
+        <div class="input-grid input-grid-payment">
+          <div class="input-group full">
+            <label for="cardNumber">Card number</label>
+            <div class="input-shell">
+              <span class="input-prefix">💳</span>
+              <input
+                id="cardNumber"
+                name="cardNumber"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                placeholder="4242 4242 4242 4242"
+              />
+              <span class="input-trailing">VISA · MC · AMEX</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="exp">Expiry</label>
+            <div class="input-shell">
+              <input
+                id="exp"
+                name="exp"
+                inputmode="numeric"
+                autocomplete="cc-exp"
+                placeholder="MM / YY"
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="cvc">CVC</label>
+            <div class="input-shell">
+              <input
+                id="cvc"
+                name="cvc"
+                inputmode="numeric"
+                autocomplete="cc-csc"
+                placeholder="3 or 4 digits"
+              />
+            </div>
+          </div>
+          <div class="input-group full">
+            <label for="nameOnCard">Name on card</label>
+            <div class="input-shell">
+              <input
+                id="nameOnCard"
+                name="nameOnCard"
+                type="text"
+                placeholder="As shown on card"
+                autocomplete="cc-name"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="hint-banner">
+          <span class="hint-dot"></span>
+          <span>
+            This checkout runs only in the browser. Connect the “Pay now” button
+            to your live payment gateway before taking real payments.
+          </span>
+        </div>
+
+        <div id="errors" class="errors"></div>
+      </section>
+    </div>
+
+    <!-- Right column: Order summary -->
+    <aside class="summary-panel" aria-label="Order summary">
+      <section class="card">
+        <div class="card-header">
+          <h2>Order summary</h2>
+          <span class="sub">Update these values for your product</span>
+        </div>
+        <div class="plan-pill">
+          <div>
+            <div class="plan-label">Plan</div>
+            <div class="plan-name" id="planName">Pro Workspace</div>
+          </div>
+          <div class="price-row">
+            <div class="big-price" id="priceDisplay">
+              $29<span class="period">/month</span>
+            </div>
+            <div class="meta-line" id="metaLine">
+              Billed monthly · cancel anytime
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="breakdown">
+          <div class="breakdown-row">
+            <span class="breakdown-label">Base price</span>
+            <span class="breakdown-value" id="basePrice">$29.00</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Users</span>
+            <span class="breakdown-value" id="userCount">
+              1 seat included
+            </span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">VAT (example)</span>
+            <span class="breakdown-value" id="vatDisplay">$0.00</span>
+          </div>
+          <div class="breakdown-row total">
+            <span class="breakdown-label">Today you pay</span>
+            <span class="breakdown-value" id="totalDisplay">$29.00</span>
+          </div>
+        </div>
+
+        <button class="pay-button" id="payButton">
+          <span>Pay now</span>
+          <span class="kbd">Enter</span>
+        </button>
+        <div class="guarantee-text">
+          <strong>14-day refund guarantee.</strong>
+          Adjust or remove this line to match your own policy.
+        </div>
+
+        <div class="footnote-row">
+          <span>
+            By confirming your payment, you agree to your own terms,
+            conditions, and subscription policy.
+          </span>
+          <span class="pill-inline">
+            <span class="dot"></span>
+            <span>Invoice sent by email</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Developer Notes (for your team) -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Developer notes</h2>
+          <span class="sub">Integration guidance</span>
+        </div>
+        <p class="dev-notes-text">
+          This checkout is a front-end shell. Hook it into your actual payment
+          system before using it in production.
+        </p>
+        <ol class="dev-notes-list">
+          <li>
+            Replace the static prices and copy in the <strong>Order summary</strong>
+            with values from your backend or payment configuration.
+          </li>
+          <li>
+            Attach the <code>#payButton</code> click handler to your checkout
+            session, payment intent, or server endpoint.
+          </li>
+          <li>
+            Run full validation on the server side before confirming any charge,
+            including fraud checks and business logic.
+          </li>
+          <li>
+            Use gateway webhooks (for example, <code>payment_succeeded</code>)
+            to activate subscriptions, deliver products, or unlock access.
+          </li>
+          <li>
+            If you need help, contact the
+            <strong>Mortal Plugins</strong> team on Discord:
+            <a href="https://discord.gg/dKbvtafN5E" target="_blank" rel="noreferrer">
+              https://discord.gg/dKbvtafN5E
+            </a>.
+          </li>
+        </ol>
+        <p class="dev-notes-text dev-notes-text-secondary">
+          Keep this section for your developers only. For customers, show just
+          the checkout and order summary above.
+        </p>
+      </section>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span id="toastMessage">
+      Demo payment processed. Connect this button to your live gateway in code.
+    </span>
+    <button class="toast-dismiss" aria-label="Dismiss message">×</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/checkout.js" defer></script>
+</body>
+</html>
