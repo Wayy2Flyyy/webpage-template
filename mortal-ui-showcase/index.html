@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortal Plugins · UI & CSS Showcase</title>
+  <link rel="stylesheet" href="assets/css/ui-showcase.css" />
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+      <div class="logo-lockup">
+        <div class="logo-mark">MP</div>
+        <div class="logo-text-block">
+          <span class="logo-title">Mortal Plugins</span>
+          <span class="logo-subtitle">UI & CSS Design Gallery</span>
+        </div>
+      </div>
+      <nav class="nav-pills">
+        <button class="nav-pill active" data-target="hero">Overview</button>
+        <button class="nav-pill" data-target="components">Components</button>
+        <button class="nav-pill" data-target="layouts">Layouts</button>
+        <button class="nav-pill" data-target="dev-notes">Dev Notes</button>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <!-- HERO / INTRO SECTION -->
+      <section id="hero" class="panel panel-hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">Design-first template</p>
+          <h1 class="hero-title">Showcase your UI, not your backend.</h1>
+          <p class="hero-body">
+            Use this page as a clean stage for your CSS and UI work. Swap colours, components,
+            and layouts without touching any complex logic.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary">Primary action</button>
+            <button class="btn-ghost">Secondary link</button>
+          </div>
+          <div class="hero-meta">
+            <span class="hero-pill">Pure CSS & HTML</span>
+            <span class="hero-pill">Vanilla JS hooks ready</span>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="orbit orbit-lg"></div>
+          <div class="orbit orbit-md"></div>
+          <div class="orbit orbit-sm"></div>
+          <div class="hero-card hero-card-main">
+            <div class="hero-card-header">
+              <span class="chip chip-live">Live style system</span>
+              <span class="hero-dot-row">
+                <span class="dot dot-green"></span>
+                <span class="dot dot-amber"></span>
+                <span class="dot dot-red"></span>
+              </span>
+            </div>
+            <p class="hero-card-title">UI Tokens · Components · Layouts</p>
+            <p class="hero-card-body">
+              This card is an example of a composed component. Duplicate it, restyle it,
+              or replace it with your own cards, lists, or graphs.
+            </p>
+            <div class="hero-card-footer">
+              <span class="badge-light">Editable</span>
+              <span class="badge-light">Responsive</span>
+              <span class="badge-light">Framework-free</span>
+            </div>
+          </div>
+          <div class="hero-card hero-card-pill">
+            <span class="pill-label">Accent gradient</span>
+            <span class="pill-value">Linear · Soft blur</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPONENT GRID SECTION -->
+      <section id="components" class="panel panel-components">
+        <header class="panel-header">
+          <h2>Component gallery</h2>
+          <p>Swap each block with your own production UI elements.</p>
+        </header>
+
+        <div class="component-grid">
+          <!-- BUTTON SET -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">Buttons</span>
+              <span class="component-tag">States & variants</span>
+            </header>
+            <div class="component-card-body">
+              <div class="button-row">
+                <button class="btn-primary">Primary</button>
+                <button class="btn-outline">Outline</button>
+                <button class="btn-soft">Soft</button>
+                <button class="btn-danger">Danger</button>
+              </div>
+              <div class="button-row button-row-subtle">
+                <button class="btn-chip">Chip pill</button>
+                <button class="btn-chip is-active">Chip active</button>
+                <button class="btn-chip is-muted">Muted</button>
+              </div>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Edit in <code>ui-showcase.css</code> under <strong>Buttons</strong>.</span>
+            </footer>
+          </article>
+
+          <!-- TAGS / BADGES -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">Badges & tags</span>
+              <span class="component-tag">Status indicators</span>
+            </header>
+            <div class="component-card-body badge-cloud">
+              <span class="badge badge-neutral">New</span>
+              <span class="badge badge-success">Stable</span>
+              <span class="badge badge-warning">Beta</span>
+              <span class="badge badge-danger">Deprecated</span>
+              <span class="badge badge-info">Experimental</span>
+              <span class="badge badge-outline">Custom theme</span>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Change colours and radii via CSS tokens.</span>
+            </footer>
+          </article>
+
+          <!-- CARDS / LIST -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">List cards</span>
+              <span class="component-tag">Hover & selection</span>
+            </header>
+            <div class="component-card-body list-card-stack">
+              <div class="list-card is-active">
+                <div class="list-card-main">
+                  <span class="list-card-title">Dashboard layout</span>
+                  <span class="list-card-sub">Multi-column · Responsive</span>
+                </div>
+                <span class="list-card-pill">Selected</span>
+              </div>
+              <div class="list-card">
+                <div class="list-card-main">
+                  <span class="list-card-title">Settings drawer</span>
+                  <span class="list-card-sub">Slide-over · Compact</span>
+                </div>
+                <span class="list-card-pill">Preview</span>
+              </div>
+              <div class="list-card">
+                <div class="list-card-main">
+                  <span class="list-card-title">Profile header</span>
+                  <span class="list-card-sub">Avatar · Meta · Actions</span>
+                </div>
+                <span class="list-card-pill">Idle</span>
+              </div>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Apply your own data and icons here.</span>
+            </footer>
+          </article>
+
+          <!-- TOGGLES / INPUTS -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">Toggles & sliders</span>
+              <span class="component-tag">Interactive shells</span>
+            </header>
+            <div class="component-card-body form-demo">
+              <label class="toggle-row">
+                <span>Animated toggle</span>
+                <button type="button" class="toggle" data-toggle="theme">
+                  <span class="toggle-thumb"></span>
+                </button>
+              </label>
+              <label class="toggle-row">
+                <span>Ghost switch</span>
+                <button type="button" class="toggle toggle-ghost">
+                  <span class="toggle-thumb"></span>
+                </button>
+              </label>
+              <label class="slider-row">
+                <span>Radius</span>
+                <input type="range" min="0" max="100" value="64" />
+                <span class="slider-value" data-role="radius-value">64</span>
+              </label>
+              <label class="slider-row">
+                <span>Blur</span>
+                <input type="range" min="0" max="32" value="16" />
+                <span class="slider-value" data-role="blur-value">16</span>
+              </label>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Hook JS into toggles via <code>ui-showcase.js</code>.</span>
+            </footer>
+          </article>
+
+          <!-- TYPOGRAPHY -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">Typography</span>
+              <span class="component-tag">Scale & rhythm</span>
+            </header>
+            <div class="component-card-body typography-demo">
+              <p class="type-eyebrow">Eyebrow label · 11px</p>
+              <p class="type-title">Section title · 18–20px</p>
+              <p class="type-body">
+                Body copy · Use this to test reading comfort, line-height, and colour contrast for paragraphs.
+              </p>
+              <p class="type-caption">
+                Caption · Fine-grained details, helper texts, and legal copy.
+              </p>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Adjust type scale and weights in one place.</span>
+            </footer>
+          </article>
+
+          <!-- COLOR TOKENS -->
+          <article class="component-card">
+            <header class="component-card-header">
+              <span class="component-label">Colour tokens</span>
+              <span class="component-tag">Brand surfaces</span>
+            </header>
+            <div class="component-card-body color-grid">
+              <div class="color-swatch">
+                <div class="color-block color-primary"></div>
+                <span class="color-label">Primary</span>
+                <span class="color-value">--accent</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-block color-surface"></div>
+                <span class="color-label">Surface</span>
+                <span class="color-value">--surface</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-block color-soft"></div>
+                <span class="color-label">Soft</span>
+                <span class="color-value">--surface-soft</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-block color-success"></div>
+                <span class="color-label">Success</span>
+                <span class="color-value">--success</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-block color-warning"></div>
+                <span class="color-label">Warning</span>
+                <span class="color-value">--warning</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-block color-danger"></div>
+                <span class="color-label">Danger</span>
+                <span class="color-value">--danger</span>
+              </div>
+            </div>
+            <footer class="component-card-footer">
+              <span class="footnote">Swap the variables once to retheme everything.</span>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <!-- LAYOUTS SECTION -->
+      <section id="layouts" class="panel panel-layouts">
+        <header class="panel-header">
+          <h2>Layout samples</h2>
+          <p>Starter ideas for real pages. Replace content with your own.</p>
+        </header>
+
+        <div class="layout-grid">
+          <article class="layout-card">
+            <header class="layout-card-header">
+              <span class="layout-label">Dashboard row</span>
+              <span class="layout-tag">3-column</span>
+            </header>
+            <div class="layout-card-body layout-dashboard">
+              <div class="layout-box layout-box-lg">Main area</div>
+              <div class="layout-box layout-box-md">Side panel</div>
+              <div class="layout-box layout-box-sm">Meta / filters</div>
+            </div>
+          </article>
+
+          <article class="layout-card">
+            <header class="layout-card-header">
+              <span class="layout-label">Cards stripe</span>
+              <span class="layout-tag">Scroll row</span>
+            </header>
+            <div class="layout-card-body layout-stripe">
+              <div class="stripe-card">Card A</div>
+              <div class="stripe-card">Card B</div>
+              <div class="stripe-card">Card C</div>
+              <div class="stripe-card">Card D</div>
+            </div>
+          </article>
+
+          <article class="layout-card">
+            <header class="layout-card-header">
+              <span class="layout-label">Split hero</span>
+              <span class="layout-tag">Content + media</span>
+            </header>
+            <div class="layout-card-body layout-split">
+              <div class="layout-split-copy">
+                <p class="layout-eyebrow">Pattern</p>
+                <p class="layout-title">Hero with visual element on the right.</p>
+                <p class="layout-body">
+                  Use this pattern for marketing pages, plugin highlights, or product shots.
+                </p>
+              </div>
+              <div class="layout-split-media">
+                <div class="layout-media-block"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DEV NOTES SECTION -->
+      <section id="dev-notes" class="panel panel-dev-notes">
+        <header class="panel-header">
+          <h2>Developer notes</h2>
+          <p>How to extend and wire this UI showcase.</p>
+        </header>
+
+        <div class="dev-notes-grid">
+          <article class="dev-note">
+            <h3>Structure</h3>
+            <p>
+              This page is intentionally simple: a single HTML file, one CSS file, and one JS file.
+              All sections are marked with IDs so you can jump, scroll, or animate between them.
+            </p>
+          </article>
+          <article class="dev-note">
+            <h3>CSS tokens</h3>
+            <p>
+              Update the <code>:root</code> variables in <code>ui-showcase.css</code> to change the entire
+              visual theme: colours, radii, shadows, and transitions.
+            </p>
+          </article>
+          <article class="dev-note">
+            <h3>JavaScript hooks</h3>
+            <p>
+              The JavaScript file includes ready-to-use hooks for:
+              navigation pills, toggles, sliders, and future animations.
+              Extend them to add real behaviour to your components.
+            </p>
+          </article>
+          <article class="dev-note">
+            <h3>Support</h3>
+            <p>
+              For integration help or customisation work, contact the
+              <strong>Mortal Plugins</strong> team in our Discord:
+              <a href="https://discord.gg/dKbvtafN5E" target="_blank" rel="noreferrer">
+                https://discord.gg/dKbvtafN5E
+              </a>.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/ui-showcase.js" defer></script>
+</body>
+</html>
